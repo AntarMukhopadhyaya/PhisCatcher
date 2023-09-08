@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Homepage
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <form action="">
+    {% csrf_token %}
+    <div class="form-group my-2">
+      <input class="form-control" name="input_url" required>
+    </div>
+    <button class="btn btn-outline-primary">Submit</button>
+  
+  </form>
+</div>
+
+{% endblock content %}
