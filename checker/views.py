@@ -124,7 +124,7 @@ def check(request):
             X_pred = pd.DataFrame({'URL_Length': [URL_Length], 'having_At_Symbol': [At_Symbol], 'double_slash_redirecting': [
                 double_slash_redirecting], 'HavingHyphen': [Hyphen_Symbol], "age_of_domain": [age_of_domain], "Favicon": [Favicon], 'Request_URL': Request_URL, 'Page_Rank': [Page_Rank], 'Google_Index': [Google_index]})
 
-            with open("C:\\Users\\antar\\Documents\\Programming\\Projects\\Python\\PhisCatcher\\checker/model.pkl", 'rb') as file:
+            with open("model.pkl", 'rb') as file:
                 model = pickle.load(file)
             y = model.predict(X_pred)
             print(y)
