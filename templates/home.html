@@ -1,19 +1,31 @@
-{% extends 'layout.html' %}
-
-{% block title %}
-Homepage
-{% endblock title %}
-
-{% block content %}
-<div class="container">
-  <form action="">
+{% extends 'layout.html' %} {% block title %} Homepage {% endblock title %} {% block content %}
+<div class="container ">
+  
+  <form action="{% url 'url_checker' %}" method="POST">
     {% csrf_token %}
-    <div class="form-group my-2">
-      <input class="form-control" name="input_url" required>
+    <div class="form-group my-2" style="width:100%!important;">
+      <input class="form-control form-control-lg" name="check_url" required value="{{url}}"  placeholder="Enter the url" />
     </div>
     <button class="btn btn-outline-primary">Submit</button>
-  
   </form>
+
+  {% if type %} 
+    {% if type == "Phising" %}
+    <div class="mt-4 p-5 bg-danger text-white rounded">
+      <h1>Phising Website detected !!!!</h1>
+      <p>{{message}}</p>
+    </div>
+    {% else %}
+    <div class="mt-4 p-5 bg-warning text-white rounded">
+      <h1>Phising Website not detected</h1>
+      <p>{{message}}</p>
+    </div>
+
+
+    {% endif %} 
+    
+  
+  {% endif %}
 </div>
 
 {% endblock content %}

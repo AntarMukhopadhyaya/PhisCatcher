@@ -6,4 +6,6 @@ def home(request):
 
 
 def about(request):
-  return render(request,'about.html')
+  return render(request,'contributors.html')
+def contributors(request):
+  return render(request,'contributors.html')

@@ -5,3 +5,4 @@ urlpatterns = [
   path("check",views.check,name="url_checker"),
   
 ]
+
